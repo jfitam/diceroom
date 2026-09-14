@@ -1,0 +1,142 @@
+.app {
+  width: min(calc(100% - 2rem), 760px);
+  margin-inline: auto;
+  padding-block: clamp(2rem, 8vw, 5rem);
+}
+
+.app h1 {
+  margin: 0 0 var(--space-xl);
+  font-size: clamp(2rem, 7vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.input-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr auto;
+  gap: var(--space-medium);
+  align-items: end;
+
+  padding: var(--space-large);
+  margin-bottom: var(--space-xl);
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-surface);
+}
+
+.input-container label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.input-container input {
+  width: 100%;
+  min-width: 0;
+  padding: var(--space-small) 0.85rem;
+
+  color: var(--color-text-strong);
+  background: var(--color-background);
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-small);
+  outline: none;
+}
+
+.input-container input:focus {
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0 0 3px var(--color-focus);
+}
+
+.input-container button {
+  min-height: 44px;
+  padding-inline: var(--space-large);
+
+  color: white;
+  font-weight: 700;
+  background: var(--color-primary);
+  border: 0;
+  border-radius: var(--radius-small);
+
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.input-container button:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+.input-container button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.latestRolls {
+  display: grid;
+  gap: var(--space-small);
+}
+
+.rollEntry {
+  padding: var(--space-medium) var(--space-large);
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+}
+
+.rollHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-medium);
+}
+
+.rollDetails {
+  color: var(--color-roll-text);
+}
+
+.rollDetails p {
+  margin: 0.6rem 0 0;
+}
+
+.rollDetails strong {
+  color: var(--color-success);
+}
+
+.rollDetails del {
+  color: var(--color-disabled);
+}
+
+.rollDetails code {
+  color: var(--color-primary-light);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  background: transparent;
+}
+
+.error {
+  padding: var(--space-small) var(--space-medium);
+
+  color: var(--color-error);
+  background: var(--color-error-background);
+  border: 1px solid var(--color-error-border);
+  border-radius: var(--radius-small);
+}
+
+@media (max-width: 650px) {
+  .input-container {
+    grid-template-columns: 1fr;
+  }
+
+  .input-container button {
+    width: 100%;
+  }
+}
